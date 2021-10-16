@@ -110,7 +110,26 @@ if (data === node.data) {
     }
   }
 
-  min() {}
+  min() {
+    if(!this.node){
+      return null
+    }
+    let thisNode=this.node
+      while(thisNode.left) {
+        thisNode=thisNode.left
+      }
+      return thisNode.data
+  }
 
-  max() {}
+  max() {
+    if(!this.node){
+      return null
+    }
+    let thisNode=this.node
+      while(thisNode.right) {
+        thisNode=thisNode.right
+      }
+      return thisNode.data
+  }
+
 };
