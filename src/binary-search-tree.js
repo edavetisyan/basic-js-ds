@@ -33,7 +33,24 @@ module.exports = class BinarySearchTree {
   }
 
   has(data) {
-    
+    return hasElement(this.node, data)
+
+    function hasElement(node, data){
+      if (!node) {
+        return false
+      }
+      if (node.data === data) {
+        return true
+      }
+      else{
+        if(data < node.data){
+          return hasElement(node.left, data)
+        }
+        else{
+          return hasElement(node.right, data)
+        }
+      }
+    }
   }
 
   find(data) {}
