@@ -53,7 +53,25 @@ module.exports = class BinarySearchTree {
     }
   }
 
-  find(data) {}
+  find(data) {
+    return findElement(this.node, data)
+    function findElement(node, data){
+if (!node) {
+  return null
+}
+if (node.data ===data) {
+  return node
+}
+else{
+  if (data<node.data) {
+    return findElement(node.left, data)
+  }
+  else{
+    return findElement(node.right, data)
+  }
+}
+    }
+  }
 
   remove(data) {}
 
